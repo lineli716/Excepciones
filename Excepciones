@@ -1,0 +1,88 @@
+using System;
+					
+public class Program
+{
+	
+	public static void Main()
+	{
+		int op;
+		char menu='n';
+		int valor1=0;
+		int valor2=0;
+		int total=0;
+		string linea="";
+		
+		while (menu!='s')
+		{
+			Console.WriteLine("--------------------------");
+			Console.WriteLine("1. Suma");
+			Console.WriteLine("2.Resta");
+			Console.WriteLine("3.Multiplicación");
+			Console.WriteLine("4.División");
+			Console.Write("5.Opción: ");
+			
+			linea=Console.ReadLine();
+			op=int.Parse(linea);
+			
+			{
+			 Console.WriteLine("--------------------------");	
+			 try
+			 	 
+			    {	 
+			      Console.WriteLine("Ingrese el primer valor a operar:  ");
+				  linea=Console.ReadLine();
+			      valor1=int.Parse(linea);
+				  
+				}
+			catch
+				{	 
+			     Console.WriteLine("dato no valido ");
+				 Console.Write("Ingrese el primer valor a operar:  ");
+			     linea=Console.ReadLine();
+			     valor1=int.Parse(linea);
+				}
+			
+				
+			try	
+			   {
+			     Console.WriteLine("Ingrese el segundo valor a operar:  ");
+			     linea=Console.ReadLine();
+			     valor2=int.Parse(linea);
+			   }	
+			catch
+			   {	 
+			     Console.WriteLine("dato no valido");
+				 Console.Write("Ingrese el segundo valor a operar:  ");
+			     linea=Console.ReadLine();
+			     valor2=int.Parse(linea);	 	
+			   }
+			Console.WriteLine("--------------------------");
+			if (op == 1)
+			 {	total = valor1 + valor2;
+			    Console.WriteLine("El total es: " +total);
+		     }
+			else if (op == 2)
+			 {	
+			    total = valor1 - valor2;
+			    Console.WriteLine("El total es: " +total);
+			 }
+			else if (op == 3)
+			 {	
+			    total = valor1 * valor2;
+			    Console.WriteLine("El total es: " +total);
+			 }
+			else if (op == 4)
+			 {	
+			    total = valor1 / valor2;
+			    Console.WriteLine("El total es: " +total);
+			 }
+			else if (op == 5)
+			{	
+			   Console.Write("Desea salir s/n:  ");
+			   linea=Console.ReadLine();
+			   menu = char.Parse(linea);
+		    }
+		  }
+		}	
+	}
+}
